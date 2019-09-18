@@ -1,0 +1,31 @@
+#include <iostream>
+#include<cstring>
+using namespace std;
+
+
+bool checkPalidrome(char str[]){
+    
+    int flag=1;
+    int length=strlen(str);
+    
+    for(int i=0;i<length/2;i++){
+        if(str[i]!=str[length-i-1]){
+            flag=0;
+            break;
+        }
+    }
+    
+    return flag;
+}
+
+int main(){
+    char str[10000];
+    cin.getline(str,10000);
+    
+    if(checkPalidrome(str)){
+        cout<<"true"<<endl;
+    }
+    else {
+        cout<<"false"<<endl;
+    }
+}
